@@ -11,11 +11,23 @@ body {
   color: hsl(0, 0%, 100%);
   padding: 30px;
   border-radius: 20px;
-  width: 350px;
+  width: 330px;
 
   /* background: hsl(215, 26%, 13%); */
 
   background: linear-gradient(0deg, rgb(21, 26, 34) 0%, rgb(28, 34, 41) 100%);
+}
+
+.thank-you-modal-container {
+  display: none;
+  text-align: center;
+}
+
+.hide-modal {
+  display: none;
+}
+.show-modal {
+  display: block;
 }
 
 .circle,
@@ -34,11 +46,27 @@ body {
   top: 16px;
 }
 
-.modal p,
+.body-text,
 .rank-btn {
   font-size: 15px;
   font-weight: 400;
   color: hsl(217, 12%, 63%);
+}
+
+#selected-out-of {
+  background-color: hsl(213, 19%, 18%);
+  color: hsl(25, 97%, 53%);
+
+  border-radius: 20px;
+
+  width: fit-content;
+  height: 35px;
+
+  padding: 0 15px;
+  margin: 20px auto 0px;
+}
+#selected-out-of p {
+  padding: 10px 0;
 }
 
 .rank-btn-container {

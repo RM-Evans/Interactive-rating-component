@@ -1,23 +1,28 @@
 let selectRank = document.querySelectorAll('.rank-btn')
-
-let btnSubmit = document.querySelectorAll('.submit-btn')
-console.log(btnSubmit)
-let rankSelected = 0
+// querySelectorAll not working when I have a single element
+let btnSubmit = document.querySelector('.submit-btn')
 
 // get rank then assign text to state
 const userSubmit = () => {
   userSelectedRank()
-  // ! not correct
-  document.querySelector('#submitted-rank').textContent = rankSelected
+  switchModals()
+}
+const switchModals = () => {
+  let rateModal = document.querySelector('.rate-modal-container')
+  let thanksModal = document.querySelector('.thank-you-modal-container')
+  //hide first modal then show the second
+  rateModal.classList.add('hide-modal')
+  thanksModal.classList.add('show-modal')
 }
 
 // get innerhtml of selected rank
 const userSelectedRank = () => {
-  for (let i = 0; i < selectRank.length; i++) {
-    if (selectRank[i].classList.contains('.rank-btn-selected')) {
-      // ! not correct
-      let rankSelected = selectRank.innerHTML
-      return console.log(rankSelected)
+  let selectRankToDisplay = document.querySelectorAll('.rank-btn')
+
+  for (let i = 0; i < selectRankToDisplay.length; i++) {
+    if (selectRankToDisplay[i].classList.contains('rank-btn-selected')) {
+      let rankSelected = selectRankToDisplay[i].innerHTML
+      document.querySelector('#submitted-rank').innerHTML = rankSelected
     }
   }
 }
@@ -30,14 +35,17 @@ const removeActiveClass = () => {
   }
 }
 
-for (let i = 0; i < selectRank.length; i++) {
-  selectRank[i].addEventListener('click', function () {
-    removeActiveClass()
-    selectRank[i].classList.add('rank-btn-selected')
-    console.log(rankSelected)
-  })
+const handleRankClass = () => {
+  for (let i = 0; i < selectRank.length; i++) {
+    selectRank[i].addEventListener('click', function () {
+      removeActiveClass()
+      selectRank[i].classList.add('rank-btn-selected')
+    })
+  }
 }
+
+handleRankClass()
 
 // **
 
-btnSubmit.addEventListener('click', userSubmit())
+btnSubmit.addEventListener('click', userSubmit)
