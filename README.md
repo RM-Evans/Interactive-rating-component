@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Interactive Rating Component](https://rm-evans.github.io/Interactive-rating-component/)
+- Live Site URL: [Interactive Rating Component](https://rm-evans.github.io/Interactive-rating-component/)
 
 ## My process
 
