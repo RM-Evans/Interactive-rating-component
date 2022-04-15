@@ -48,4 +48,10 @@ handleRankClass()
 
 // **
 
-btnSubmit.addEventListener('click', userSubmit)
+btnSubmit.addEventListener('click', function () {
+  let containsRank = document.querySelector('.rank-btn-selected') != null
+  // make sure a rank is selected
+  if (containsRank) {
+    userSubmit()
+  }
+})
